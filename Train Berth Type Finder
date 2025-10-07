@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class TrainBerthTypeFinder {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int seat = sc.nextInt();
+        
+        if (seat < 1 || seat > 72) {
+            System.out.println("Invalid seat number");
+            return;
+        }
+        
+        int remainder = seat % 8;
+        
+        switch (remainder) {
+            case 1:
+            case 4:
+                System.out.println("LB");
+                break;
+            case 2:
+            case 5:
+                System.out.println("MB");
+                break;
+            case 3:
+            case 6:
+                System.out.println("UB");
+                break;
+            case 7:
+                System.out.println("SL");
+                break;
+            case 0:
+                System.out.println("SU");
+                break;
+        }
+    }
+}
