@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int age = sc.nextInt();
+        int distance = sc.nextInt();
+
+        double standardFare = distance * 5; 
+        double totalFare;
+
+        if (age < 12) {
+            totalFare = standardFare * 0.5; 
+        } else if (age >= 60) {
+            totalFare = standardFare * 0.75; 
+        } else {
+            totalFare = standardFare; 
+        }
+
+        if (totalFare == (int) totalFare) {
+            System.out.println((int) totalFare);
+        } else {
+            System.out.println(totalFare);
+        }
+
+        sc.close();
+    }
+}
