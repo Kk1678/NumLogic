@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class FunGradeCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int sum = 0;
+
+        for (int i = 1; i <= 5; i++) {
+            int mark = sc.nextInt();
+
+            if (mark < 0 || mark > 100) {
+                System.out.println("Invalid mark. Please enter 0 to 100.");
+                return;
+            }
+            sum += mark;
+        }
+
+        double average = sum / 5.0;
+
+        if (average >= 90) {
+            System.out.println("Excellent!");
+        } else if (average >= 80) {
+            System.out.println("Great Job!");
+        } else if (average >= 70) {
+            System.out.println("Good Effort!");
+        } else if (average >= 50) {
+            System.out.println("Keep Trying!");
+        } else {
+            System.out.println("Better Luck Next Time!");
+        }
+    }
+}
